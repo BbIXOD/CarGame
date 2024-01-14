@@ -8,7 +8,7 @@ using UnityEngine;
 public class Booster : Consumable
 {
     [SerializeField]private Boosters type;
-    [SerializeField]private int duration;
+    [SerializeField]private float duration;
 
     private static Booster last;
     private bool turnedWithForce;
@@ -19,14 +19,14 @@ public class Booster : Consumable
         last = this;
         booster = BoostersContainer.instance.boosters.First(x => x.type == type).obj;
         booster.SetActive(true);
-        TurnOffWithTimer();
+        GoContainer.Instance.StartCoroutine(TurnOffWithTimer()); // possible bug if remove goContainer
         BoosterShow.instance.Show(type, duration);
         base.Action();
     }
 
-    private async void TurnOffWithTimer() {
-        await Task.Delay(duration);
-        if (turnedWithForce) return;
+    private IEnumerator TurnOffWithTimer() {
+        yield return new WaitForSeconds(duration);
+        if (turnedWithForce) yield break;
         TurnOff();
     }
 

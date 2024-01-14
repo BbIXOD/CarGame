@@ -7,5 +7,6 @@ public class Tags : MonoBehaviour
     public const string
         Player = nameof(Player),
         Coin = nameof(Coin),
-        Magnet = nameof(Magnet);
+        Magnet = nameof(Magnet),
+        Shield = nameof(Shield);
 }

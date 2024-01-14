@@ -12,17 +12,15 @@ public class BoosterShow : MonoBehaviour
     [SerializeField]private Image bar;
     [SerializeField]private TMP_Text caption;
 
-    private const float MilisecondsPerSecond = 1000f;
-
     public static BoosterShow instance;
 
     private void Awake() {
         instance = this;
     }
 
-    public void Show(Boosters type, int duration) {
+    public void Show(Boosters type, float duration) {
         bar.sprite = lineColors[(int)type];
         caption.text = type.ToString();
-        decreaser.StartDecreasing(MilisecondsPerSecond / duration);
+        decreaser.StartDecreasing(1 / duration);
     }
 }
