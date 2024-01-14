@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : Consumable
+public class Heart : Consumable
 {
-
-    [SerializeField]private int coinValue;
-
     protected override void Action() {
-        ScoreManager.coins.AddScore(coinValue);
+        PlayerHealth.instance.Value = PlayerHealth.instance.maxHealth;
         base.Action();
     }
 }

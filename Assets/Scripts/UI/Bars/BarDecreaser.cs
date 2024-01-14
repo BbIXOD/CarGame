@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class BarDecreaser : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField]private BarLengthController bar;
+    [SerializeField]private GameObject _barObj;
+    private float _speed, _current;
+
+    public void StartDecreasing(float speed) {
+        _speed = speed;
+        _current = 1;
+        _barObj.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Update() {
+        if (_current <= 0) return;
+
+        _current -= Time.deltaTime * _speed;
+        bar.BarLength = _current;
+
+        if (_current > 0) return;
+        _barObj.SetActive(false);
     }
 }

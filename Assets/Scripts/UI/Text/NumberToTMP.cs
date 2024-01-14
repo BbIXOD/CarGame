@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class NumberToTMP : MonoBehaviour
 {
-    public TextMesh text;
+    public TMP_Text text;
     public string format = "N";
     private int _number = 0;
     public int Number { set => SetNumber(value); }
 
     private void Start() {
-        text = text != null ? text : GetComponent<TextMesh>();
+        text = text != null ? text : GetComponent<TMP_Text>();
     }
 
     private void SetNumber(int number) {

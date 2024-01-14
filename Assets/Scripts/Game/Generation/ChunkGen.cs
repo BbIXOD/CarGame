@@ -28,7 +28,6 @@ public class ChunkGen : MonoBehaviour //1d chunk generator
     private void FixedUpdate() {
         var chunk = (int)((trackedObj.position.y - firstChunkPos) / chunkSize);
         if (chunk == currentChunk) return;
-        Debug.Log(chunk);
         currentChunk = chunk;
         Generate(chunk);
     }

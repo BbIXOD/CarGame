@@ -6,5 +6,6 @@ public class Tags : MonoBehaviour
 {
     public const string
         Player = nameof(Player),
-        Coin = nameof(Coin);
+        Coin = nameof(Coin),
+        Magnet = nameof(Magnet);
 }
