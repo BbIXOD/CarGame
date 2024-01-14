@@ -1708,8 +1708,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d474e3ca2e08fb34ca60d1aadc45d99e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  format: N
+  text: {fileID: 480280294}
+  format: N0
 --- !u!114 &480280294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3261,6 +3261,8 @@ GameObject:
   - component: {fileID: 898055842}
   - component: {fileID: 898055841}
   - component: {fileID: 898055843}
+  - component: {fileID: 898055845}
+  - component: {fileID: 898055844}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -3310,6 +3312,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   observable: {fileID: 1466736251}
+--- !u!114 &898055844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898055840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0d586b91a486647bf712f122437b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScore: {fileID: 970931690}
+  bestScore: {fileID: 480280293}
+  currentCoins: {fileID: 2125432109}
+  bestCoins: {fileID: 1054821451}
+  best: {fileID: 898055845}
+--- !u!114 &898055845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898055840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e638a4acff2f979408be7a56ae7580d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bestScore: 0
+  bestCoins: 0
 --- !u!1 &906304503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3914,8 +3947,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d474e3ca2e08fb34ca60d1aadc45d99e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  format: N
+  text: {fileID: 970931691}
+  format: N0
 --- !u!114 &970931691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4110,8 +4143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d474e3ca2e08fb34ca60d1aadc45d99e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  format: N
+  text: {fileID: 1054821452}
+  format: N0
 --- !u!114 &1054821452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4728,7 +4761,6 @@ RectTransform:
   - {fileID: 451045592}
   - {fileID: 395008182}
   - {fileID: 2064458192}
-  - {fileID: 1776936412}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5198,7 +5230,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1352259990}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -5494,7 +5526,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 046b9057968017448b85133976350d60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6546,7 +6578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1776936412
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6554,7 +6586,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776936411}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6567,7 +6599,7 @@ RectTransform:
   - {fileID: 480280292}
   - {fileID: 2125432108}
   - {fileID: 1054821450}
-  m_Father: {fileID: 1165035096}
+  m_Father: {fileID: 2064458192}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7097,6 +7129,7 @@ RectTransform:
   - {fileID: 1381023098}
   - {fileID: 1690553029}
   - {fileID: 923592099}
+  - {fileID: 1776936412}
   m_Father: {fileID: 1165035096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7494,8 +7527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d474e3ca2e08fb34ca60d1aadc45d99e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  format: N
+  text: {fileID: 2125432110}
+  format: N0
 --- !u!114 &2125432110
 MonoBehaviour:
   m_ObjectHideFlags: 0
