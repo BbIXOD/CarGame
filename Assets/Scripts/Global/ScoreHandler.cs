@@ -6,6 +6,7 @@ public class ScoreHandler
 {
     private readonly NumberToTMP _scoreField;
     private int score = 0;
+    public int Score => score;
 
     public ScoreHandler(NumberToTMP scoreField) {
         _scoreField = scoreField;
