@@ -10,6 +10,10 @@ public class Health : MonoBehaviour
 
     public int Value { get => _health; set => SetHealth(value); }
 
+    protected virtual void Awake() {
+        _health = maxHealth;
+    }
+
     private void SetHealth(int value) {
         _health = value;
         OnHealthChanged(_health);

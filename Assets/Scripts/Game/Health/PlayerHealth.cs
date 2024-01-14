@@ -10,7 +10,8 @@ public class PlayerHealth : Health
 
     [NonSerialized]public static Health instance;
 
-    private void Awake() {
+    protected override void Awake() {
+        base.Awake();
         instance = this;
     }
 

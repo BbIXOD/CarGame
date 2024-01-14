@@ -10,6 +10,7 @@ public class CarParams : MonoBehaviour
         acceleration,
         deceleration,
         decelerationPassive,
+        decelerationTopReached,
         turnSpeed,
         turnAcceleration;
 }

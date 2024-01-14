@@ -9,7 +9,7 @@ public class BarLengthController : MonoBehaviour
     [SerializeField]private float moveSpeed = 4;
     public RectTransform bar;
     private float barMaxLength;
-    [Range(0, 1)]private float barLength, currentLength;
+    [Range(0, 1)]private float barLength, currentLength = 1;
     public float BarLength { set => barLength = value; } // why is it here?
 
     private void Start() {

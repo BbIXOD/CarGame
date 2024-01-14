@@ -17,7 +17,11 @@ public class CarMove : MonoBehaviour
     private void FixedUpdate() {
         var velocity = _rb.velocity;
         
-        if (breaks.Pressed) {
+        if (velocity.y > _params.topSpeed) {
+            velocity.y = Mathf.MoveTowards(velocity.y, _params.topSpeed,
+                _params.decelerationTopReached * Time.fixedDeltaTime);
+        }
+        else if (breaks.Pressed) {
             velocity.y -= _params.deceleration * Time.fixedDeltaTime;
         }
         else if (accel.Pressed) {
@@ -27,7 +31,7 @@ public class CarMove : MonoBehaviour
             velocity.y -= _params.decelerationPassive * Time.fixedDeltaTime;
         }
 
-        velocity.y = Mathf.Clamp(velocity.y, 0, _params.topSpeed);
+        velocity.y = Mathf.Clamp(velocity.y, 0, _params.topSpeed * 2);
         _rb.velocity = velocity;
         _params.currentSpeed = _rb.velocity.y;
     }
