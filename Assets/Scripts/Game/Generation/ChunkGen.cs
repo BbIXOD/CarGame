@@ -18,13 +18,19 @@ public class ChunkGen : MonoBehaviour //1d chunk generator
     private int currentChunk;
 
     private void Start() {
-        trackedObj = trackedObj != null ? trackedObj : Camera.main.transform;
+        trackedObj = trackedObj != null ? trackedObj : transform;
+
+        for (int i = 1; i <= chunksInFront; i++) {
+            GenerateChunk?.Invoke(i * chunkSize);
+        }
     }
 
     private void FixedUpdate() {
-        var chunk = (int)((transform.position.y - firstChunkPos) / chunkSize);
+        var chunk = (int)((trackedObj.position.y - firstChunkPos) / chunkSize);
         if (chunk == currentChunk) return;
-
+        Debug.Log(chunk);
+        currentChunk = chunk;
+        Generate(chunk);
     }
 
     private void Generate(int chunk) {

@@ -9,7 +9,7 @@ public class LoadPart : MonoBehaviour
     [SerializeField]private string partsFolder;
 
     private GameObject[] _parts;
-    private readonly List<GameObject> _loadedParts = new();
+    private readonly Dictionary<float, GameObject> _loadedParts = new();
 
     private void Awake() {
         generator = generator != null ? generator : GetComponent<ChunkGen>();
@@ -21,12 +21,13 @@ public class LoadPart : MonoBehaviour
 
     public void Load(float pos) {
         var loaded = Instantiate(_parts[Random.Range(0, _parts.Length)], new Vector3(0, pos, 0), Quaternion.identity);
-        _loadedParts.Add(loaded);
+        _loadedParts.Add(pos, loaded);
     }
 
-    public void Unload(float _) {
-        var last = _loadedParts[0];
-        _loadedParts.RemoveAt(0);
+    public void Unload(float pos) {
+        if(!_loadedParts.ContainsKey(pos)) return;
+        var last = _loadedParts[pos];
+        _loadedParts.Remove(pos);
         Destroy(last);
     }
 }
